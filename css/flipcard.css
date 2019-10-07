@@ -1,8 +1,3 @@
-.hd-flipcard {
-	width: 100%;
-	height: 100%;
-}
-
 /* 3D effect */
 .hd-flipcard-3d {
 	perspective: 1000px;
@@ -17,19 +12,25 @@
 }
 
 .hd-flipcard .el-card,
-.hd-flipcard .el-card-back {
+ .hd-flipcard .el-card-back {
 	backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	width: 100%;
+	height: 100%;
+}
+
+/* Firefox */
+.hd-flipcard .el-card {
+	transform-style: preserve-3d;
 }
 
 .hd-flipcard .el-card-back {
 	position: absolute;
 	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
 }
 
-.hd-flipcard .el-card .uk-panel {
+.hd-flipcard .el-content.uk-panel,
+ .hd-flipcard .el-content-back.uk-panel {
 	position: static;
 }
 

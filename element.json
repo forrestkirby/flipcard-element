@@ -8,7 +8,6 @@
     "width": 500,
     "defaults": {
         "link_text": "Read more",
-        "title_hover_style": "reset",
         "title_element": "h3",
         "title_align": "top",
         "title_grid_width": "1-2",
@@ -22,11 +21,10 @@
         "image_svg_color": "emphasis",
         "link_style": "default",
         "link_back_text": "Read more",
-        "title_back_hover_style": "reset",
         "title_back_element": "h3",
         "title_back_align": "top",
         "title_back_grid_width": "1-2",
-        "titl_backe_grid_breakpoint": "m",
+        "title_back_grid_breakpoint": "m",
         "meta_back_style": "meta",
         "meta_back_align": "below-title",
         "icon_back_ratio": 4,
@@ -42,14 +40,14 @@
     "placeholder": {
         "props": {
             "title": "Title",
-            "meta": "Meta",
+            "meta": "",
             "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-            "image": "https://getuikit.com/docs/images/photo.jpg",
+            "image": "",
             "icon": "",
             "title_back": "Title",
-            "meta_back": "Meta",
+            "meta_back": "",
             "content_back": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-            "image_back": "https://getuikit.com/docs/images/photo.jpg",
+            "image_back": "",
             "icon_back": ""
         }
     },
@@ -93,12 +91,9 @@
             "type": "icon",
             "enable": "!image"
         },
-        "link": "${builder.link}",
-        "link_target": "${builder.link_target}",
         "link_text": {
             "label": "Link Text",
-            "description": "Enter the text for the link.",
-            "enable": "link"
+            "description": "Enter the text for the link. There is no actual link on the flip card front, it will only be used for styling purposes."
         },
         "title_back": {
             "label": "Title"
@@ -172,8 +167,7 @@
                 "None": "",
                 "Card Default": "card-default",
                 "Card Primary": "card-primary",
-                "Card Secondary": "card-secondary",
-                "Card Hover": "card-hover"
+                "Card Secondary": "card-secondary"
             }
         },
         "panel_content_padding": {
@@ -229,17 +223,6 @@
                 "H6": "h6"
             },
             "enable": "title"
-        },
-        "title_hover_style": {
-            "label": "Hover Style",
-            "description": "Set the hover style for a linked title.",
-            "type": "select",
-            "options": {
-                "None": "reset",
-                "Heading Link": "heading",
-                "Default Link": ""
-            },
-            "enable": "title && link && link_type"
         },
         "title_decoration": {
             "label": "Decoration",
@@ -472,18 +455,6 @@
             },
             "enable": "content"
         },
-        "image_transition": {
-            "label": "Hover Transition",
-            "description": "Set the hover transition for a linked image.",
-            "type": "select",
-            "default": "",
-            "options": {
-                "None": "",
-                "Scale Up": "scale-up",
-                "Scale Down": "scale-down"
-            },
-            "enable": "image && link && link_type"
-        },
         "image_border": {
             "label": "Border",
             "description": "Select the image's border style.",
@@ -510,20 +481,6 @@
                 "X-Large": "xlarge"
             },
             "enable": "image && !panel_style"
-        },
-        "image_hover_box_shadow": {
-            "label": "Hover Box Shadow",
-            "description": "Select the image's box shadow size on hover.",
-            "type": "select",
-            "default": "",
-            "options": {
-                "None": "",
-                "Small": "small",
-                "Medium": "medium",
-                "Large": "large",
-                "X-Large": "xlarge"
-            },
-            "enable": "link && image && !panel_style && link_type"
         },
         "image_box_decoration": {
             "label": "Box Decoration",
@@ -668,18 +625,6 @@
             },
             "enable": "image && image_svg_inline"
         },
-        "link_type": {
-            "label": "Type",
-            "description": "Show the link as a button or choose between linking just the image and title or the whole element.",
-            "type": "select",
-            "default": "",
-            "options": {
-                "Button": "",
-                "Title/Image": "content",
-                "Element": "element"
-            },
-            "enable": "link"
-        },
         "link_style": {
             "label": "Style",
             "description": "Set the link style.",
@@ -694,7 +639,7 @@
                 "Link Muted": "link-muted",
                 "Link Text": "link-text"
             },
-            "enable": "link && !link_type"
+            "enable": "link_text"
         },
         "link_size": {
             "label": "Button Size",
@@ -706,7 +651,7 @@
                 "Default": "",
                 "Large": "large"
             },
-            "enable": "link && !link_type && link_style && link_style != 'link-muted' && link_style != 'link-text'"
+            "enable": "link_text && link_style && link_style != 'link-muted' && link_style != 'link-text'"
         },
         "link_margin": {
             "label": "Margin Top",
@@ -721,7 +666,7 @@
                 "X-Large": "xlarge",
                 "None": "remove"
             },
-            "enable": "link && !link_type"
+            "enable": "link_text"
         },
         "panel_back_style": {
             "label": "Style",
@@ -732,8 +677,7 @@
                 "None": "",
                 "Card Default": "card-default",
                 "Card Primary": "card-primary",
-                "Card Secondary": "card-secondary",
-                "Card Hover": "card-hover"
+                "Card Secondary": "card-secondary"
             }
         },
         "panel_back_content_padding": {
@@ -789,17 +733,6 @@
                 "H6": "h6"
             },
             "enable": "title_back"
-        },
-        "title_back_hover_style": {
-            "label": "Hover Style",
-            "description": "Set the hover style for a linked title.",
-            "type": "select",
-            "options": {
-                "None": "reset",
-                "Heading Link": "heading",
-                "Default Link": ""
-            },
-            "enable": "title_back && link_back && link_back_type"
         },
         "title_back_decoration": {
             "label": "Decoration",
@@ -1032,19 +965,7 @@
             },
             "enable": "content_back"
         },
-        "image_back_transition": {
-            "label": "Hover Transition",
-            "description": "Set the hover transition for a linked image.",
-            "type": "select",
-            "default": "",
-            "options": {
-                "None": "",
-                "Scale Up": "scale-up",
-                "Scale Down": "scale-down"
-            },
-            "enable": "image_back && link_back && link_back_type"
-        },
-        "imag_backe_border": {
+        "image_back_border": {
             "label": "Border",
             "description": "Select the image's border style.",
             "type": "select",
@@ -1070,20 +991,6 @@
                 "X-Large": "xlarge"
             },
             "enable": "image_back && !panel_back_style"
-        },
-        "image_back_hover_box_shadow": {
-            "label": "Hover Box Shadow",
-            "description": "Select the image's box shadow size on hover.",
-            "type": "select",
-            "default": "",
-            "options": {
-                "None": "",
-                "Small": "small",
-                "Medium": "medium",
-                "Large": "large",
-                "X-Large": "xlarge"
-            },
-            "enable": "link_back && image_back && !panel_back_style && link_back_type"
         },
         "image_back_box_decoration": {
             "label": "Box Decoration",
@@ -1150,7 +1057,7 @@
                 "Large": "large",
                 "None": "collapse"
             },
-            "enable": "(imag_backe || icon_back) && (image_back_align == 'left' || image_back_align == 'right') && !(panel_back_card_image && panel_back_style)"
+            "enable": "(image_back || icon_back) && (image_back_align == 'left' || image_back_align == 'right') && !(panel_back_card_image && panel_back_style)"
         },
         "image_back_grid_row_gap": {
             "label": "Grid Row Gap",
@@ -1341,8 +1248,6 @@
                         },
                         "image_alt",
                         "icon",
-                        "link",
-                        "link_target",
                         "link_text"
                     ]
                 },
@@ -1399,7 +1304,6 @@
                             "divider": true,
                             "fields": [
                                 "title_style",
-                                "title_hover_style",
                                 "title_decoration",
                                 "title_font_family",
                                 "title_color",
@@ -1437,10 +1341,8 @@
                             "type": "group",
                             "divider": true,
                             "fields": [
-                                "image_transition",
                                 "image_border",
                                 "image_box_shadow",
-                                "image_hover_box_shadow",
                                 "image_box_decoration",
                                 "image_box_decoration_inverse",
                                 "icon_ratio",
@@ -1462,7 +1364,6 @@
                             "type": "group",
                             "divider": true,
                             "fields": [
-                                "link_type",
                                 "link_style",
                                 "link_size",
                                 "link_margin"
@@ -1485,7 +1386,6 @@
                             "divider": true,
                             "fields": [
                                 "title_back_style",
-                                "title_back_hover_style",
                                 "title_back_decoration",
                                 "title_back_font_family",
                                 "title_back_color",
@@ -1523,10 +1423,8 @@
                             "type": "group",
                             "divider": true,
                             "fields": [
-                                "image_back_transition",
                                 "image_back_border",
                                 "image_back_box_shadow",
-                                "image_back_hover_box_shadow",
                                 "image_back_box_decoration",
                                 "image_back_box_decoration_inverse",
                                 "icon_back_ratio",

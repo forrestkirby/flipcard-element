@@ -8,6 +8,7 @@ $title = $this->el($props['title_element'], [
         'uk-{title_style}',
         'uk-card-title {@panel_style} {@!title_style}',
         'uk-heading-{title_decoration}',
+        'uk-font-{title_font_family}',
         'uk-text-{title_color} {@!title_color: background}',
         'uk-margin[-{title_margin}]-top {@!title_margin: remove}',
         'uk-margin-remove-top {@title_margin: remove}',
@@ -54,7 +55,7 @@ $grid = $this->el('div', [
 
     'class' => [
         'uk-child-width-expand',
-        'uk-grid-{title_gutter}',
+        $props['title_grid_column_gap'] == $props['title_grid_row_gap'] ? 'uk-grid-{title_grid_column_gap}' : '[uk-grid-column-{title_grid_column_gap}] [uk-grid-row-{title_grid_row_gap}]',
         'uk-margin[-{title_margin}]-top {@!title_margin: remove} {@image_align: top}' => !$props['meta'] || $props['meta_align'] != 'above-title',
         'uk-margin[-{meta_margin}]-top {@!meta_margin: remove} {@image_align: top} {@meta} {@meta_align: above-title}',
     ],
@@ -65,7 +66,7 @@ $grid = $this->el('div', [
 $cell_title = $this->el('div', [
 
     'class' => [
-        'uk-width-{title_grid_width}[@{title_breakpoint}]',
+        'uk-width-{title_grid_width}[@{title_grid_breakpoint}]',
         'uk-margin-remove-first-child',
     ],
 
@@ -127,7 +128,7 @@ $cell_content = $this->el('div', [
         <?= $meta($props, $props['meta']) ?>
         <?php endif ?>
 
-        <?php if ($props['link'] && !$props['link_type'] && $props['link_text']) : ?>
+        <?php if ($props['link_text']) : ?>
         <?= $link_container($props, $link($props, $props['link_text'])) ?>
         <?php endif ?>
 

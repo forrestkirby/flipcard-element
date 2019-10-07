@@ -12,20 +12,7 @@ $props['has_panel_content_padding'] = $props['image'] && $props['panel_content_p
 // Image
 $props['image'] = $this->render("{$__dir}/template-image", compact('props'));
 
-if ($props['image_transition']) {
 
-    $transition_toggle = $this->el('div', [
-        'class' => [
-            'uk-inline-clip [uk-transition-toggle {@link_type: content}]',
-            'uk-border-{image_border}' => !$props['panel_style'] || ($props['panel_style'] && (!$props['panel_card_image'] || $props['image_align'] == 'between')),
-            'uk-box-shadow-{image_box_shadow} {@!panel_style}',
-            'uk-box-shadow-hover-{image_hover_box_shadow} {@!panel_style} {@link_type}' => $props['link'],
-            'uk-margin[-{image_margin}]-top {@!image_margin: remove} {@!image_box_decoration}' => $props['image_align'] == 'between' || ($props['image_align'] == 'bottom' && !($props['panel_style'] && $props['panel_card_image'])),
-        ],
-    ]);
-    $props['image'] = $transition_toggle($props, $props['image']);
-
-}
 
 if ($props['image_box_decoration']) {
 
@@ -46,16 +33,14 @@ if ($props['image_box_decoration']) {
 }
 
 // Panel/Card
-$front = $this->el($props['link'] && $props['link_type'] == 'element' ? 'a' : 'div', [
+$front = $this->el('div', [
 
     'class' => [
         'el-card',
         'uk-panel {@!panel_style}',
         'uk-card uk-{panel_style} [uk-card-{panel_size}]',
-        'uk-card-hover {@!panel_style: |card-hover} {@link_type: element} {@link}',
         'uk-card-body {@panel_style} {@!has_panel_card_image}',
         'uk-margin-remove-first-child' => (!$props['panel_style'] && !$props['has_panel_content_padding']) || ($props['panel_style'] && !$props['has_panel_card_image']),
-        'uk-transition-toggle {@image} {@image_transition} {@link_type: element}',
     ],
 
 ]);
@@ -65,7 +50,11 @@ $grid = $this->el('div', [
 
     'class' => [
         'uk-child-width-expand',
-        $props['panel_style'] && $props['has_panel_card_image'] ? 'uk-grid-collapse uk-grid-match' : 'uk-grid-{image_gutter}',
+        $props['panel_style'] && $props['has_panel_card_image']
+            ? 'uk-grid-collapse uk-grid-match'
+            : ($props['image_grid_column_gap'] == $props['image_grid_row_gap']
+                ? 'uk-grid-{image_grid_column_gap}'
+                : '[uk-grid-column-{image_grid_column_gap}] [uk-grid-row-{image_grid_row_gap}]'),
         'uk-flex-middle {@image_vertical_align}',
     ],
 
@@ -75,8 +64,8 @@ $grid = $this->el('div', [
 $cell_image = $this->el('div', [
 
     'class' => [
-        'uk-width-{image_grid_width}[@{image_breakpoint}]',
-        'uk-flex-last[@{image_breakpoint}] {@image_align: right}',
+        'uk-width-{image_grid_width}[@{image_grid_breakpoint}]',
+        'uk-flex-last[@{image_grid_breakpoint}] {@image_align: right}',
     ],
 
 ]);
@@ -122,21 +111,6 @@ $props['has_panel_back_content_padding'] = $props['image_back'] && $props['panel
 // Image
 $props['image_back'] = $this->render("{$__dir}/template-image_back", compact('props'));
 
-if ($props['image_back_transition']) {
-
-    $transition_back_toggle = $this->el('div', [
-        'class' => [
-            'uk-inline-clip [uk-transition-toggle {@link_back_type: content}]',
-            'uk-border-{image_back_border}' => !$props['panel_back_style'] || ($props['panel_back_style'] && (!$props['panel_back_card_image'] || $props['image_back_align'] == 'between')),
-            'uk-box-shadow-{image_back_box_shadow} {@!panel_back_style}',
-            'uk-box-shadow-hover-{image_back_hover_box_shadow} {@!panel_back_style} {@link_back_type}' => $props['link_back'],
-            'uk-margin[-{image_back_margin}]-top {@!image_back_margin: remove} {@!image_back_box_decoration}' => $props['image_back_align'] == 'between' || ($props['image_back_align'] == 'bottom' && !($props['panel_back_style'] && $props['panel_back_card_image'])),
-        ],
-    ]);
-    $props['image_back'] = $transition_back_toggle($props, $props['image_back']);
-
-}
-
 if ($props['image_back_box_decoration']) {
 
     $decoration_back = $this->el('div', [
@@ -162,10 +136,8 @@ $back = $this->el($props['link_back'] && $props['link_back_type'] == 'element' ?
         'el-card-back',
         'uk-panel {@!panel_back_style}',
         'uk-card uk-{panel_back_style} [uk-card-{panel_back_size}]',
-        'uk-card-hover {@!panel_back_style: |card-hover} {@link_back_type: element} {@link_back}',
         'uk-card-body {@panel_back_style} {@!has_panel_back_card_image}',
         'uk-margin-remove-first-child' => (!$props['panel_back_style'] && !$props['has_panel_back_content_padding']) || ($props['panel_back_style'] && !$props['has_panel_back_card_image']),
-        'uk-transition-toggle {@image_back} {@image_back_transition} {@link_back_type: element}',
     ],
 
 ]);
@@ -175,7 +147,11 @@ $grid_back = $this->el('div', [
 
     'class' => [
         'uk-child-width-expand',
-        $props['panel_back_style'] && $props['has_panel_back_card_image'] ? 'uk-grid-collapse uk-grid-match' : 'uk-grid-{image_back_gutter}',
+        $props['panel_back_style'] && $props['has_panel_back_card_image']
+            ? 'uk-grid-collapse uk-grid-match'
+            : ($props['image_back_grid_column_gap'] == $props['image_back_grid_row_gap']
+                ? 'uk-grid-{image_back_grid_column_gap}'
+                : '[uk-grid-column-{image_back_grid_column_gap}] [uk-grid-row-{image_back_grid_row_gap}]'),
         'uk-flex-middle {@image_back_vertical_align}',
     ],
 
@@ -185,8 +161,8 @@ $grid_back = $this->el('div', [
 $cell_image_back = $this->el('div', [
 
     'class' => [
-        'uk-width-{image_back_grid_width}[@{image_back_breakpoint}]',
-        'uk-flex-last[@{image_back_breakpoint}] {@image_back_align: right}',
+        'uk-width-{image_back_grid_width}[@{image_back_grid_breakpoint}]',
+        'uk-flex-last[@{image_back_grid_breakpoint}] {@image_back_align: right}',
     ],
 
 ]);

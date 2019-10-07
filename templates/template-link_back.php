@@ -8,7 +8,7 @@ $link_back = $props['link_back'] ? $this->el('a', [
 
 if ($link_back && $props['link_back_type'] == 'element') {
 
-    $el->attr($link_back->attrs + [
+    $back->attr($link_back->attrs + [
 
         'class' => [
             'uk-display-block uk-link-toggle',
@@ -19,15 +19,6 @@ if ($link_back && $props['link_back_type'] == 'element') {
     $props['title_back'] = $this->striptags($props['title_back']);
     $props['meta_back'] = $this->striptags($props['meta_back']);
     $props['content_back'] = $this->striptags($props['content_back']);
-
-    if ($props['title_back'] && $props['title_back_hover_style'] != 'reset') {
-        $props['title_back'] = $this->el('span', [
-            'class' => [
-                'uk-link-{title_hover_style: heading}',
-                'uk-link {!title_hover_style}',
-            ],
-        ], $props['title_back'])->render($props);
-    }
 
 } elseif ($link_back && $props['link_back_type'] == 'content') {
 
@@ -42,7 +33,7 @@ if ($link_back && $props['link_back_type'] == 'element') {
     if ($props['title_back']) {
         $props['title_back'] = $link_back($props, [
             'class' => [
-                'uk-link-{title_back_hover_style}',
+                'uk-link-reset',
             ],
         ], $this->striptags($props['title_back']));
     }

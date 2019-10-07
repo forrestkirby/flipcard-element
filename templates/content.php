@@ -17,8 +17,8 @@
     <div><?= $props['content'] ?></div>
     <?php endif ?>
 
-    <?php if ($props['link']) : ?>
-    <p><a href="<?= $props['link'] ?>"><?= $props['link_text'] ?></a></p>
+    <?php if ($props['link_text']) : ?>
+    <p><?= $props['link_text'] ?></p>
     <?php endif ?>
 
 </div>
