@@ -30,7 +30,7 @@ Please report issues using the [Github issue tool](../../issues).
 
 ## To-do
 
-- delay of back showing up on first load
+- add js function to calculate and set height of the element if size of back card exceeds size of front card (?)
 
 ## About
 
