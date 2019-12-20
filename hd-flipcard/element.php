@@ -1,19 +1,19 @@
 <?php
 
+namespace YOOtheme;
+
 return [
 
 	'transforms' => [
 
-		'render' => function ($node, array $params) use ($file) {
+		'render' => function ($node) {
 
 			/**
-			 * @var $app
-			 * @var $theme
-			 * @var $builder
+			 * @var Metadata $metadata
 			 */
-			extract($params);
+			$metadata = app(Metadata::class);
 
-			$app['styles']->add('builder-hd-flipcard', "{$file['dirname']}/css/flipcard.css", [], ['defer' => true]);
+			$metadata->set('style:builder-hd-flipcard', ['href' => Path::get('./css/flipcard.css'), 'defer' => true]);
 
 		},
 
