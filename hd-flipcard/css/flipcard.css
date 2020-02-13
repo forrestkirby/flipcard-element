@@ -14,7 +14,7 @@
 .hd-flipcard .el-card,
  .hd-flipcard .el-card-back {
 	backface-visibility: hidden;
-	-moz-backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
 	width: 100%;
 	height: 100%;
 }
