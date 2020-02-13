@@ -1,5 +1,11 @@
 # Flipcard Element Changelog
 
+## 1.1
+
+### Fixed
+
+- fix backface-visibility in Safari
+
 ## 1.0
 
 ### Added
