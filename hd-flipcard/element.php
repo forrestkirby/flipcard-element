@@ -4,25 +4,36 @@ namespace YOOtheme;
 
 return [
 
-	'transforms' => [
+    'transforms' => [
 
-		'render' => function ($node) {
+        'render' => function ($node) {
 
-			/**
-			 * @var Metadata $metadata
-			 */
-			$metadata = app(Metadata::class);
+            /**
+             * @var Metadata $metadata
+             */
+            $metadata = app(Metadata::class);
 
-			$metadata->set('style:builder-hd-flipcard', ['href' => Path::get('./css/flipcard.css'), 'defer' => true]);
+            $metadata->set('style:builder-hd-flipcard', ['href' => Path::get('./css/flipcard.css'), 'defer' => true]);
 
-		},
+        },
 
-	],
+    ],
 
     'updates' => [
 
-        //
+        '2.0.0-beta.5.1' => function ($node) {
 
+            if (@$node->props['link_back_type'] === 'content') {
+                $node->props['title_back_link'] = true;
+                $node->props['image_back_link'] = true;
+                $node->props['link_back_text'] = '';
+            } elseif (@$node->props['link_back_type'] === 'element') {
+                $node->props['panel_back_link'] = true;
+                $node->props['link_back_text'] = '';
+            }
+            unset($node->props['link_back_type']);
+
+        },
     ],
 
 ];

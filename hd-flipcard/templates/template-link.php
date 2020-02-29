@@ -1,10 +1,10 @@
 <?php
 
-$link = $props['link_text'] ? $this->el('a', [
+$link = $props['link_text'] ? $this->el('p', [
     //
 ]) : null;
 
-if ($link) {
+if ($link && $props['link_text']) {
 
     $link->attr([
 

@@ -2,7 +2,7 @@
     "@import": "./element.php",
     "name": "hd-flipcard",
     "title": "HD Flipcard",
-	"group": "herzog-dupont",
+    "group": "herzog-dupont",
     "icon": "${url:images/icon.svg}",
     "iconSmall": "${url:images/iconSmall.svg}",
     "element": true,
@@ -22,6 +22,7 @@
         "image_svg_color": "emphasis",
         "link_style": "default",
         "link_back_text": "Read more",
+        "title_back_hover_style": "reset",
         "title_back_element": "h3",
         "title_back_align": "top",
         "title_back_grid_width": "1-2",
@@ -58,14 +59,17 @@
     },
     "fields": {
         "title": {
-            "label": "Title"
+            "label": "Title",
+            "source": true
         },
         "meta": {
-            "label": "Meta"
+            "label": "Meta",
+            "source": true
         },
         "content": {
             "label": "Content",
-            "type": "editor"
+            "type": "editor",
+            "source": true
         },
         "image": "${builder.image}",
         "image_width": {
@@ -84,27 +88,33 @@
         },
         "image_alt": {
             "label": "Image Alt",
+            "source": true,
             "enable": "image"
         },
         "icon": {
             "label": "Icon",
             "description": "Instead of using a custom image, you can click on the pencil to pick an icon from the icon library.",
             "type": "icon",
+            "source": true,
             "enable": "!image"
         },
         "link_text": {
             "label": "Link Text",
-            "description": "Enter the text for the link. There is no actual link on the flip card front, it will only be used for styling purposes."
+            "description": "Enter the text for the link. There is no actual link on the flip card front, it will only be used for styling purposes.",
+            "source": true
         },
         "title_back": {
-            "label": "Title"
+            "label": "Title",
+            "source": true
         },
         "meta_back": {
-            "label": "Meta"
+            "label": "Meta",
+            "source": true
         },
         "content_back": {
             "label": "Content",
-            "type": "editor"
+            "type": "editor",
+            "source": true
         },
         "image_back": "${builder.image}",
         "image_back_width": {
@@ -123,12 +133,14 @@
         },
         "image_back_alt": {
             "label": "Image Alt",
+            "source": true,
             "enable": "image_back"
         },
         "icon_back": {
             "label": "Icon Back",
             "description": "Instead of using a custom image, you can click on the pencil to pick an icon from the icon library.",
             "type": "icon",
+            "source": true,
             "enable": "!image_back"
         },
         "link_back": "${builder.link}",
@@ -136,6 +148,7 @@
         "link_back_text": {
             "label": "Link Text",
             "description": "Enter the text for the link.",
+            "source": true,
             "enable": "link_back"
         },
         "flip_animation": {
@@ -168,7 +181,8 @@
                 "None": "",
                 "Card Default": "card-default",
                 "Card Primary": "card-primary",
-                "Card Secondary": "card-secondary"
+                "Card Secondary": "card-secondary",
+                "Card Hover": "card-hover"
             }
         },
         "panel_content_padding": {
@@ -279,7 +293,8 @@
                 "H3": "h3",
                 "H4": "h4",
                 "H5": "h5",
-                "H6": "h6"
+                "H6": "h6",
+                "div": "div"
             },
             "enable": "title"
         },
@@ -678,8 +693,16 @@
                 "None": "",
                 "Card Default": "card-default",
                 "Card Primary": "card-primary",
-                "Card Secondary": "card-secondary"
+                "Card Secondary": "card-secondary",
+                "Card Hover": "card-hover"
             }
+        },
+        "panel_back_link": {
+            "label": "Link",
+            "description": "Link the whole panel if a link exists.",
+            "type": "checkbox",
+            "text": "Link panel",
+            "enable": "link_back"
         },
         "panel_back_content_padding": {
             "label": "Padding",
@@ -692,7 +715,7 @@
                 "Default": "default",
                 "Large": "large"
             },
-            "show": "!panel_style",
+            "show": "!panel_back_style",
             "enable": "image_back && image_back_align != 'between'"
         },
         "panel_back_size": {
@@ -734,6 +757,24 @@
                 "H6": "h6"
             },
             "enable": "title_back"
+        },
+        "title_back_link": {
+            "label": "Link",
+            "description": "Link the title if a link exists.",
+            "type": "checkbox",
+            "text": "Link title",
+            "enable": "title_back && link_back"
+        },
+        "title_back_hover_style": {
+            "label": "Hover Style",
+            "description": "Set the hover style for a linked title.",
+            "type": "select",
+            "options": {
+                "None": "reset",
+                "Heading Link": "heading",
+                "Default Link": ""
+            },
+            "enable": "title_back && link_back && (title_back_link || panel_back_link)"
         },
         "title_back_decoration": {
             "label": "Decoration",
@@ -789,7 +830,8 @@
                 "H3": "h3",
                 "H4": "h4",
                 "H5": "h5",
-                "H6": "h6"
+                "H6": "h6",
+                "div": "div"
             },
             "enable": "title_back"
         },
@@ -1013,6 +1055,39 @@
             "text": "Inverse style",
             "enable": "image_back && !panel_back_style && $match(image_back_box_decoration, '^(default|primary|secondary)$')"
         },
+        "image_back_link": {
+            "label": "Link",
+            "description": "Link the image if a link exists.",
+            "type": "checkbox",
+            "text": "Link image",
+            "enable": "image_back && link_back"
+        },
+        "image_back_transition": {
+            "label": "Hover Transition",
+            "description": "Set the hover transition for a linked image.",
+            "type": "select",
+            "default": "",
+            "options": {
+                "None": "",
+                "Scale Up": "scale-up",
+                "Scale Down": "scale-down"
+            },
+            "enable": "image_back && link_back && (image_back_link || panel_back_link)"
+        },
+        "image_back_hover_box_shadow": {
+            "label": "Hover Box Shadow",
+            "description": "Select the image's box shadow size on hover.",
+            "type": "select",
+            "default": "",
+            "options": {
+                "None": "",
+                "Small": "small",
+                "Medium": "medium",
+                "Large": "large",
+                "X-Large": "xlarge"
+            },
+            "enable": "link_back && image_back && !panel_back_style && (image_back_link || panel_back_link)"
+        },
         "icon_back_ratio": "${builder.icon_ratio}",
         "icon_back_color": "${builder.icon_color}",
         "image_back_align": {
@@ -1136,18 +1211,6 @@
             },
             "enable": "image_back && image_back_svg_inline"
         },
-        "link_back_type": {
-            "label": "Type",
-            "description": "Show the link as a button or choose between linking just the image and title or the whole element.",
-            "type": "select",
-            "default": "",
-            "options": {
-                "Button": "",
-                "Title/Image": "content",
-                "Element": "element"
-            },
-            "enable": "link_back"
-        },
         "link_back_style": {
             "label": "Style",
             "description": "Set the link style.",
@@ -1162,7 +1225,7 @@
                 "Link Muted": "link-muted",
                 "Link Text": "link-text"
             },
-            "enable": "link_back && !link_back_type"
+            "enable": "link_back && link_back_text"
         },
         "link_back_size": {
             "label": "Button Size",
@@ -1174,7 +1237,7 @@
                 "Default": "",
                 "Large": "large"
             },
-            "enable": "link_back && !link_back_type && link_back_style && link_back_style != 'link-muted' && link_back_style != 'link-text'"
+            "enable": "link_back && link_back_text && link_back_style && link_back_style != 'link-muted' && link_back_style != 'link-text'"
         },
         "link_back_margin": {
             "label": "Margin Top",
@@ -1189,7 +1252,7 @@
                 "X-Large": "xlarge",
                 "None": "remove"
             },
-            "enable": "link_back && !link_back_type"
+            "enable": "link_back && link_back_text"
         },
         "position": "${builder.position}",
         "position_left": "${builder.position_left}",
@@ -1213,6 +1276,7 @@
         "visibility": "${builder.visibility}",
         "name": "${builder.name}",
         "status": "${builder.status}",
+        "source": "${builder.source}",
         "id": "${builder.id}",
         "class": "${builder.cls}",
         "css": {
@@ -1376,6 +1440,7 @@
                             "divider": true,
                             "fields": [
                                 "panel_back_style",
+                                "panel_back_link",
                                 "panel_back_content_padding",
                                 "panel_back_size",
                                 "panel_back_card_image"
@@ -1387,6 +1452,8 @@
                             "divider": true,
                             "fields": [
                                 "title_back_style",
+                                "title_back_link",
+                                "title_back_hover_style",
                                 "title_back_decoration",
                                 "title_back_font_family",
                                 "title_back_color",
@@ -1428,6 +1495,9 @@
                                 "image_back_box_shadow",
                                 "image_back_box_decoration",
                                 "image_back_box_decoration_inverse",
+                                "image_back_link",
+                                "image_back_transition",
+                                "image_back_hover_box_shadow",
                                 "icon_back_ratio",
                                 "icon_back_color",
                                 "image_back_align",
@@ -1447,7 +1517,6 @@
                             "type": "group",
                             "divider": true,
                             "fields": [
-                                "link_back_type",
                                 "link_back_style",
                                 "link_back_size",
                                 "link_back_margin"

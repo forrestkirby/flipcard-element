@@ -8,6 +8,7 @@ $title_back = $this->el($props['title_back_element'], [
         'uk-{title_back_style}',
         'uk-card-title {@panel_back_style} {@!title_back_style}',
         'uk-heading-{title_back_decoration}',
+        'uk-font-{title_back_font_family}',
         'uk-text-{title_back_color} {@!title_back_color: background}',
         'uk-margin[-{title_back_margin}]-top {@!title_back_margin: remove}',
         'uk-margin-remove-top {@title_back_margin: remove}',
@@ -54,7 +55,7 @@ $grid_back = $this->el('div', [
 
     'class' => [
         'uk-child-width-expand',
-        'uk-grid-{title_back_gutter}',
+        $props['title_back_grid_column_gap'] == $props['title_back_grid_row_gap'] ? 'uk-grid-{title_back_grid_column_gap}' : '[uk-grid-column-{title_back_grid_column_gap}] [uk-grid-row-{title_back_grid_row_gap}]',
         'uk-margin[-{title_back_margin}]-top {@!title_back_margin: remove} {@image_back_align: top}' => !$props['meta_back'] || $props['meta_back_align'] != 'above-title',
         'uk-margin[-{meta_back_margin}]-top {@!meta_back_margin: remove} {@image_back_align: top} {@meta_back} {@meta_back_align: above-title}',
     ],
@@ -127,7 +128,7 @@ $cell_content_back = $this->el('div', [
         <?= $meta_back($props, $props['meta_back']) ?>
         <?php endif ?>
 
-        <?php if ($props['link_back'] && !$props['link_back_type'] && $props['link_back_text']) : ?>
+        <?php if ($props['link_back'] && $props['link_back_text']) : ?>
         <?= $link_back_container($props, $link_back($props, $props['link_back_text'])) ?>
         <?php endif ?>
 

@@ -39,6 +39,7 @@ $front = $this->el('div', [
         'el-card',
         'uk-panel {@!panel_style}',
         'uk-card uk-{panel_style} [uk-card-{panel_size}]',
+        'uk-card-hover {@!panel_style: |card-hover}',
         'uk-card-body {@panel_style} {@!has_panel_card_image}',
         'uk-margin-remove-first-child' => (!$props['panel_style'] && !$props['has_panel_content_padding']) || ($props['panel_style'] && !$props['has_panel_card_image']),
     ],
@@ -103,6 +104,10 @@ if ($props['panel_style'] && $props['has_panel_card_image']) {
 // Resets
 if ($props['icon_back'] && !$props['image_back']) { $props['panel_back_card_image'] = ''; }
 if ($props['panel_back_style'] || !$props['image_back']) { $props['image_back_box_decoration'] = ''; }
+if ($props['panel_back_link']) {
+    $props['title_back_link'] = '';
+    $props['image_back_link'] = '';
+}
 
 // New logic shortcuts
 $props['has_panel_back_card_image'] = $props['image_back'] && $props['panel_back_card_image'] && $props['image_back_align'] != 'between';
@@ -110,6 +115,21 @@ $props['has_panel_back_content_padding'] = $props['image_back'] && $props['panel
 
 // Image
 $props['image_back'] = $this->render("{$__dir}/template-image_back", compact('props'));
+
+if ($props['image_back_transition']) {
+
+    $transition_toggle = $this->el('div', [
+        'class' => [
+            'uk-inline-clip [uk-transition-toggle {@image_back_link}]',
+            'uk-border-{image_back_border}' => !$props['panel_back_style'] || ($props['panel_back_style'] && (!$props['panel_back_card_image'] || $props['image_back_align'] == 'between')),
+            'uk-box-shadow-{image_back_box_shadow} {@!panel_back_style}',
+            'uk-box-shadow-hover-{image_back_hover_box_shadow} {@!panel_back_style} {@link_back}' => $props['image_back_link'] || $props['panel_back_link'],
+            'uk-margin[-{image_back_margin}]-top {@!image_back_margin: remove} {@!image_back_box_decoration}' => $props['image_back_align'] == 'between' || ($props['image_back_align'] == 'bottom' && !($props['panel_back_style'] && $props['panel_back_card_image'])),
+        ],
+    ]);
+    $props['image'] = $transition_toggle($props, $props['image']);
+
+}
 
 if ($props['image_back_box_decoration']) {
 
@@ -130,14 +150,16 @@ if ($props['image_back_box_decoration']) {
 }
 
 // Panel/Card
-$back = $this->el($props['link_back'] && $props['link_back_type'] == 'element' ? 'a' : 'div', [
+$back = $this->el($props['link_back'] && $props['panel_back_link'] ? 'a' : 'div', [
 
     'class' => [
         'el-card-back',
         'uk-panel {@!panel_back_style}',
         'uk-card uk-{panel_back_style} [uk-card-{panel_back_size}]',
+        'uk-card-hover {@!panel_back_style: |card-hover} {@panel_back_link} {@link_back}',
         'uk-card-body {@panel_back_style} {@!has_panel_back_card_image}',
         'uk-margin-remove-first-child' => (!$props['panel_back_style'] && !$props['has_panel_back_content_padding']) || ($props['panel_back_style'] && !$props['has_panel_back_card_image']),
+        'uk-transition-toggle {@image_back} {@image_back_transition} {@panel_back_link}',
     ],
 
 ]);
