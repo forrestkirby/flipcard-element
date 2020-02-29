@@ -1,5 +1,18 @@
 # Flipcard Element Changelog
 
+## 2.0.0-beta.9
+
+### Added
+
+- dynamic content
+- back link options
+- hover effects for back title and back image
+- `div` to HTML element option
+
+### Changed
+
+- theme functions to load CSS/JS
+
 ## 1.1
 
 ### Fixed
