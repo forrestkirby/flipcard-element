@@ -2,7 +2,7 @@
 
 A custom element for the YOOtheme Pro Page Builder to display a panel with a flipcard animation.
 
-Copyright (C) 2007–2019 YOOtheme GmbH yootheme.com, 2019 forrestkirby github.com/forrestkirby
+Copyright (C) 2007–2020 YOOtheme GmbH yootheme.com, 2020 forrestkirby github.com/forrestkirby
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -30,7 +30,7 @@ Please report issues using the [Github issue tool](../../issues).
 
 ## To-do
 
-- add js function to calculate and set height of the element if size of back card exceeds size of front card (?)
+- add (optional) was to handle height of the element if size of back card exceeds size of front card (?)
 
 ## About
 
