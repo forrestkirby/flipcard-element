@@ -13,7 +13,7 @@ return [
              */
             $metadata = app(Metadata::class);
 
-            $metadata->set('style:builder-hd-flipcard', ['href' => Path::get('./css/flipcard.css'), 'defer' => true]);
+            $metadata->set('style:builder-hd-flipcard', ['href' => Path::get('./css/flipcard.css')]);
 
         },
 
