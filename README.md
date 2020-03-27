@@ -30,7 +30,7 @@ Please report issues using the [Github issue tool](../../issues).
 
 ## To-do
 
-- add (optional) was to handle height of the element if size of back card exceeds size of front card (?)
+- add (optional) way to handle height of the element if size of back card exceeds size of front card (?)
 
 ## About
 
