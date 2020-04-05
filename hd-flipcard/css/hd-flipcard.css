@@ -16,11 +16,11 @@
 	backface-visibility: hidden;
 	-webkit-backface-visibility: hidden;
 	width: 100%;
-	height: 100%;
 }
 
-/* Firefox */
 .hd-flipcard .el-card {
+	height: 100%;
+	/* Firefox */
 	transform-style: preserve-3d;
 }
 
