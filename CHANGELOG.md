@@ -1,5 +1,11 @@
 # Flipcard Element Changelog
 
+## 2.0.5
+
+### Added
+
+- handle different height of front and back
+
 ## 2.0.4
 
 ### Removed
