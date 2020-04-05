@@ -28,10 +28,6 @@ along with this program. If not, see <https://www.gnu.org/licenses/>.
 
 Please report issues using the [Github issue tool](../../issues).
 
-## To-do
-
-- add (optional) way to handle height of the element if size of back card exceeds size of front card (?)
-
 ## About
 
 Flipcard Element is a custom element for YOOtheme Pro developed by [YOOtheme](https://yootheme.com).
