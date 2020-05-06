@@ -14,7 +14,7 @@ return [
             $metadata = app(Metadata::class);
 
             $metadata->set('style:builder-hd-flipcard', ['href' => Path::get('./css/hd-flipcard.css')]);
-            $metadata->set('script:builder-hd-counter', ['src' => Path::get('./js/hd-flipcard.js'), 'defer' => true]);
+            $metadata->set('script:builder-hd-flipcard', ['src' => Path::get('./js/hd-flipcard.js'), 'defer' => true]);
 
         },
 
