@@ -36,6 +36,9 @@ $content_back = $this->el('div', [
     'class' => [
         'el-content-back uk-panel',
         'uk-text-{content_back_style}',
+        'uk-dropcap {@content_back_dropcap}',
+        'uk-column-{content_back_column}[@{content_back_column_breakpoint}]',
+        'uk-column-divider {@content_back_column} {@content_back_column_divider}',
         'uk-margin[-{content_back_margin}]-top {@!content_back_margin: remove}',
     ],
 
