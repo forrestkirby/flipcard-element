@@ -15,6 +15,7 @@
         "title_grid_breakpoint": "m",
         "meta_style": "meta",
         "meta_align": "below-title",
+        "meta_element": "div",
         "content_column_breakpoint": "m",
         "icon_width": 80,
         "image_align": "top",
@@ -30,6 +31,8 @@
         "title_back_grid_breakpoint": "m",
         "meta_back_style": "meta",
         "meta_back_align": "below-title",
+        "meta_back_element": "div",
+        "content_back_column_breakpoint": "m",
         "icon_back_width": 80,
         "image_back_align": "top",
         "image_back_grid_width": "1-2",
@@ -280,7 +283,7 @@
         },
         "title_element": {
             "label": "HTML Element",
-            "description": "Choose one of the six heading elements to fit your semantic structure.",
+            "description": "Choose one of the HTML elements to fit your semantic structure.",
             "type": "select",
             "options": {
                 "h1": "h1",
@@ -360,7 +363,8 @@
                 "Always": "",
                 "Small (Phone Landscape)": "s",
                 "Medium (Tablet Landscape)": "m",
-                "Large (Desktop)": "l"
+                "Large (Desktop)": "l",
+                "X-Large (Large Screens)": "xl"
             },
             "enable": "title && title_align == 'left'"
         },
@@ -424,6 +428,21 @@
                 "Below Title": "below-title",
                 "Above Content": "above-content",
                 "Below Content": "below-content"
+            },
+            "enable": "meta"
+        },
+        "meta_element": {
+            "label": "HTML Element",
+            "description": "Choose one of the HTML elements to fit your semantic structure.",
+            "type": "select",
+            "options": {
+                "h1": "h1",
+                "h2": "h2",
+                "h3": "h3",
+                "h4": "h4",
+                "h5": "h5",
+                "h6": "h6",
+                "div": "div"
             },
             "enable": "meta"
         },
@@ -622,7 +641,8 @@
                 "Always": "",
                 "Small (Phone Landscape)": "s",
                 "Medium (Tablet Landscape)": "m",
-                "Large (Desktop)": "l"
+                "Large (Desktop)": "l",
+                "X-Large (Large Screens)": "xl"
             },
             "enable": "(image || icon) && (image_align == 'left' || image_align == 'right')"
         },
@@ -848,7 +868,7 @@
         },
         "title_back_element": {
             "label": "HTML Element",
-            "description": "Choose one of the six heading elements to fit your semantic structure.",
+            "description": "Choose one of the HTML elements to fit your semantic structure.",
             "type": "select",
             "options": {
                 "h1": "h1",
@@ -928,7 +948,8 @@
                 "Always": "",
                 "Small (Phone Landscape)": "s",
                 "Medium (Tablet Landscape)": "m",
-                "Large (Desktop)": "l"
+                "Large (Desktop)": "l",
+                "X-Large (Large Screens)": "xl"
             },
             "enable": "title_back && title_back_align == 'left'"
         },
@@ -992,6 +1013,21 @@
                 "Below Title": "below-title",
                 "Above Content": "above-content",
                 "Below Content": "below-content"
+            },
+            "enable": "meta_back"
+        },
+        "meta_back_element": {
+            "label": "HTML Element",
+            "description": "Choose one of the HTML elements to fit your semantic structure.",
+            "type": "select",
+            "options": {
+                "h1": "h1",
+                "h2": "h2",
+                "h3": "h3",
+                "h4": "h4",
+                "h5": "h5",
+                "h6": "h6",
+                "div": "div"
             },
             "enable": "meta_back"
         },
@@ -1221,7 +1257,8 @@
                 "Always": "",
                 "Small (Phone Landscape)": "s",
                 "Medium (Tablet Landscape)": "m",
-                "Large (Desktop)": "l"
+                "Large (Desktop)": "l",
+                "X-Large (Large Screens)": "xl"
             },
             "enable": "(image_back || icon_back) && (image_back_align == 'left' || image_back_align == 'right')"
         },
@@ -1451,6 +1488,7 @@
                                 "meta_style",
                                 "meta_color",
                                 "meta_align",
+                                "meta_element",
                                 "meta_margin"
                             ]
                         },
@@ -1540,6 +1578,7 @@
                                 "meta_back_style",
                                 "meta_back_color",
                                 "meta_back_align",
+                                "meta_back_element",
                                 "meta_back_margin"
                             ]
                         },

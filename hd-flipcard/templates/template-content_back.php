@@ -18,14 +18,14 @@ $title_back = $this->el($props['title_back_element'], [
 ]);
 
 // Meta
-$meta_back = $this->el('div', [
+$meta_back = $this->el($props['meta_back_element'], [
 
     'class' => [
         'el-meta-back',
         'uk-[text-{@meta_back_style: meta}]{meta_back_style}',
         'uk-text-{meta_back_color}',
         'uk-margin[-{meta_back_margin}]-top {@!meta_back_margin: remove}',
-        'uk-margin-remove-bottom {@!meta_back_style: |meta} [uk-margin-{meta_back_margin: remove}-top]',
+        'uk-margin-remove-bottom [uk-margin-{meta_back_margin: remove}-top]' => !in_array($props['meta_back_style'], ['', 'meta']) || $props['meta_back_element'] != 'div',
     ],
 
 ]);
