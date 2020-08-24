@@ -471,6 +471,12 @@
             },
             "enable": "content"
         },
+        "content_align": {
+            "label": "Alignment",
+            "type": "checkbox",
+            "text": "Force left alignment",
+            "enable": "content"
+        },
         "content_dropcap": {
             "label": "Drop Cap",
             "description": "Display the first letter of the paragraph as a large initial.",
@@ -1056,6 +1062,12 @@
             },
             "enable": "content_back"
         },
+        "content_back_align": {
+            "label": "Alignment",
+            "type": "checkbox",
+            "text": "Force left alignment",
+            "enable": "content_back"
+        },
         "content_back_dropcap": {
             "label": "Drop Cap",
             "description": "Display the first letter of the paragraph as a large initial.",
@@ -1498,6 +1510,7 @@
                             "divider": true,
                             "fields": [
                                 "content_style",
+                                "content_align",
                                 "content_dropcap",
                                 "content_column",
                                 "content_column_divider",
@@ -1588,6 +1601,7 @@
                             "divider": true,
                             "fields": [
                                 "content_back_style",
+                                "content_back_align",
                                 "content_back_dropcap",
                                 "content_back_column",
                                 "content_back_column_divider",
