@@ -1,5 +1,11 @@
 # Flipcard Element Changelog
 
+## 2.2.4
+
+### Added
+
+- option to force left content alignment
+
 ## 2.2.0-beta.3
 
 ### Added
