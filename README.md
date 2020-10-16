@@ -42,9 +42,10 @@ Flipcard Element is a custom element for YOOtheme Pro developed by [YOOtheme](ht
 - [Progress Element](https://github.com/forrestkirby/progress-element)
 - [Timeline Element](https://github.com/forrestkirby/timeline-element)
 - [Counter Element](https://github.com/forrestkirby/counter-element)
+- [Image Comparison Element](https://github.com/forrestkirby/image-comparison-element)
 
 ## Screenshots
 
-![Image](https://pionte.ch/yootheme/max/images/tutorial-flipcard-2.jpg)
+![](https://herzog-dupont.de/images/tutorials/tutorial-flipcard-2.jpg)
 
-![Image](https://pionte.ch/yootheme/max/images/tutorial-flipcard-3.jpg)
+![](https://herzog-dupont.de/images/tutorials/tutorial-flipcard-3.jpg)
