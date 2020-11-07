@@ -35,7 +35,7 @@
 }
 
 /* flip right */
-.hd-flipcard-right:hover .hd-flipcard-inner {
+.hd-flipcard-right.hd-flipcard-hover .hd-flipcard-inner {
 	transform: rotateY(180deg);
 }
 
@@ -44,7 +44,7 @@
 }
 
 /* flip left */
-.hd-flipcard-left:hover .hd-flipcard-inner {
+.hd-flipcard-left.hd-flipcard-hover .hd-flipcard-inner {
 	transform: rotateY(-180deg);
 }
 
@@ -53,7 +53,7 @@
 }
 
 /* flip up */
-.hd-flipcard-up:hover .hd-flipcard-inner {
+.hd-flipcard-up.hd-flipcard-hover .hd-flipcard-inner {
 	transform: rotateX(180deg);
 }
 
@@ -62,7 +62,7 @@
 }
 
 /* flip down */
-.hd-flipcard-down:hover .hd-flipcard-inner {
+.hd-flipcard-down.hd-flipcard-hover .hd-flipcard-inner {
 	transform: rotateX(-180deg);
 }
 
@@ -71,7 +71,7 @@
 }
 
 /* flip up right */
-.hd-flipcard-up-right:hover .hd-flipcard-inner {
+.hd-flipcard-up-right.hd-flipcard-hover .hd-flipcard-inner {
 	transform: rotate3d(1, 1, 0, 180deg);
 }
 
@@ -80,7 +80,7 @@
 }
 
 /* flip up left */
-.hd-flipcard-up-left:hover .hd-flipcard-inner {
+.hd-flipcard-up-left.hd-flipcard-hover .hd-flipcard-inner {
 	transform: rotate3d(1, -1, 0, 180deg);
 }
 
@@ -89,7 +89,7 @@
 }
 
 /* flip down right */
-.hd-flipcard-down-right:hover .hd-flipcard-inner {
+.hd-flipcard-down-right.hd-flipcard-hover .hd-flipcard-inner {
 	transform: rotate3d(-1, 1, 0, 180deg);
 }
 
@@ -98,7 +98,7 @@
 }
 
 /* flip down left */
-.hd-flipcard-down-left:hover .hd-flipcard-inner {
+.hd-flipcard-down-left.hd-flipcard-hover .hd-flipcard-inner {
 	transform: rotate3d(1, 1, 0, -180deg);
 }
 
