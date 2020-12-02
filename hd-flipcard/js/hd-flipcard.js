@@ -30,11 +30,9 @@ UIkit.util.ready(function() {
 	UIkit.util.$$('.hd-flipcard').forEach(el => {
 		el.addEventListener('mouseenter', e => {
 			e.currentTarget.classList.add('hd-flipcard-hover');
-			console.log(e);
 		});
 		el.addEventListener('mouseleave', e => {
 			e.currentTarget.classList.remove('hd-flipcard-hover');
-			console.log(e);
 		});
 		el.addEventListener('touchend', e => {
 			e.preventDefault();
@@ -43,7 +41,6 @@ UIkit.util.ready(function() {
 			} else {
 				e.currentTarget.classList.add('hd-flipcard-hover');
 			}
-			console.log(e);
 		});
 	});
 })
