@@ -1,5 +1,11 @@
 # Flipcard Element Changelog
 
+## 2.3.15
+
+### Changed
+
+- flip handling on touch devices changed to show the front card again on second touch instead of touching any spot but the card
+
 ## 2.2.4
 
 ### Added
