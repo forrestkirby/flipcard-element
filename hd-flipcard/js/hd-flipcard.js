@@ -35,7 +35,6 @@ UIkit.util.ready(function() {
 			e.currentTarget.classList.remove('hd-flipcard-hover');
 		});
 		el.addEventListener('touchend', e => {
-			e.preventDefault();
 			if (e.currentTarget.classList.contains('hd-flipcard-hover')) {
 				e.currentTarget.classList.remove('hd-flipcard-hover');
 			} else {
