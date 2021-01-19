@@ -1,5 +1,11 @@
 # Flipcard Element Changelog
 
+## 2.3.27
+
+### Fixed
+
+- link back not working on touch
+
 ## 2.3.15
 
 ### Changed
