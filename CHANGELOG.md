@@ -1,5 +1,11 @@
 # Flipcard Element Changelog
 
+## 2.4.1
+
+### Fixed
+
+- left/right aligned images not covering cards with different heights
+
 ## 2.3.27
 
 ### Fixed
@@ -72,7 +78,7 @@
 
 ### Fixed
 
-- fix backface-visibility in Safari
+- backface-visibility in Safari
 
 ## 1.0
 
@@ -82,7 +88,7 @@
 
 ### Removed
 
-- front card link
+- card link
 - title hover style
 - image hover transition
 
