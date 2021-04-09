@@ -6,10 +6,6 @@
 
 - flip mode option
 
-### Fixed
-
-- issue with layout shift on certain devices
-
 ## 2.4.1
 
 ### Fixed
