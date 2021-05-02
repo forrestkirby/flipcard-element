@@ -1,3 +1,5 @@
+/* Flipcard Element Copyright (C) 2019–2021 Thomas Weidlich GNU GPL v3 */
+
 function setBackSize() {
 
 	let flipcards = document.querySelectorAll('.hd-flipcard'),

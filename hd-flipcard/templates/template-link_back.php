@@ -1,5 +1,7 @@
 <?php
 
+/* Flipcard Element Copyright (C) 2016–2021 YOOtheme GmbH, 2019–2021 Thomas Weidlich GNU GPL v3 */
+
 $link_back = $props['link_back'] ? $this->el('a', [
     'href' => ['{link_back}'],
     'target' => ['_blank {@link_back_target}'],
