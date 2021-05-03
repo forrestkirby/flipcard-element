@@ -67,6 +67,9 @@ if ($link_back && $props['link_back_text']) {
             'el-link-back',
             'uk-{link_back_style: link-(muted|text)}',
             'uk-button uk-button-{!link_back_style: |link-muted|link-text} [uk-button-{link_back_size}]',
+            // Keep link style if panel link
+            'uk-link {@link_back_style:} {@panel_back_link}',
+            'uk-text-muted {@link_back_style: link-muted} {@panel_back_link}',
         ],
 
     ]);
