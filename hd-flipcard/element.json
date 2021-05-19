@@ -740,6 +740,11 @@
             },
             "enable": "link_text && link_style && link_style != 'link-muted' && link_style != 'link-text'"
         },
+        "link_fullwidth": {
+            "type": "checkbox",
+            "text": "Full width button",
+            "enable": "link_text && link_style && link_style != 'link-muted' && link_style != 'link-text'"
+        },
         "link_margin": {
             "label": "Margin Top",
             "description": "Set the top margin. Note that the margin will only apply if the content field immediately follows another content field.",
@@ -1362,6 +1367,11 @@
             },
             "enable": "link_back && link_back_text && link_back_style && link_back_style != 'link-muted' && link_back_style != 'link-text'"
         },
+        "link_back_fullwidth": {
+            "type": "checkbox",
+            "text": "Full width button",
+            "enable": "link_back && link_back_text && link_back_style && link_back_style != 'link-muted' && link_back_style != 'link-text'"
+        },
         "link_back_margin": {
             "label": "Margin Top",
             "description": "Set the top margin. Note that the margin will only apply if the content field immediately follows another content field.",
@@ -1561,6 +1571,7 @@
                             "fields": [
                                 "link_style",
                                 "link_size",
+                                "link_fullwidth",
                                 "link_margin"
                             ]
                         },
@@ -1655,6 +1666,7 @@
                             "fields": [
                                 "link_back_style",
                                 "link_back_size",
+                                "link_back_fullwidth",
                                 "link_back_margin"
                             ]
                         },

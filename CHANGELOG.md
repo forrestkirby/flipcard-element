@@ -1,5 +1,15 @@
 # Flipcard Element Changelog
 
+## 2.4.15
+
+### Added
+
+- full width option for buttons
+
+### Fixed
+
+- images not being clipped for round cards
+
 ## 2.4.14
 
 ### Fixed
