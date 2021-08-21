@@ -28,9 +28,33 @@ function setBackSize() {
 window.addEventListener('load', setBackSize);
 window.addEventListener('resize', setBackSize);
 
-UIkit.util.ready(function() {
+UIkit.util.ready(() => {
+
 	UIkit.util.$$('.hd-flipcard').forEach(el => {
+
 		let flipMode = el.dataset.flipmode;
-		UIkit.toggle(el, { mode: flipMode, cls: 'hd-flipcard-hover' });
+
+		if (flipMode.includes('hover')) {
+			if (flipMode !== 'hover, click' || !UIkit.util.hasTouch) {
+				el.addEventListener('mouseenter', e => {
+					e.currentTarget.classList.add('hd-flipcard-hover');
+				});
+			}
+			el.addEventListener('mouseleave', e => {
+				e.currentTarget.classList.remove('hd-flipcard-hover');
+			});
+		}
+
+		if (flipMode.includes('click')) {
+			el.addEventListener('click', e => {
+				if (e.currentTarget.classList.contains('hd-flipcard-hover')) {
+					e.currentTarget.classList.remove('hd-flipcard-hover');
+				} else {
+					e.currentTarget.classList.add('hd-flipcard-hover');
+				}
+			});
+		}
+
 	});
+
 });
