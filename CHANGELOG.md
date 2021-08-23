@@ -1,5 +1,11 @@
 # Flipcard Element Changelog
 
+## 2.5.10
+
+### Changed
+
+- improve flip handling on touch devices
+
 ## 2.4.15
 
 ### Added
