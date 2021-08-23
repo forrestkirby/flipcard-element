@@ -42,6 +42,7 @@
         "flip_animation": "right",
         "3d_effect": true,
         "flip_mode": "hover",
+        "flip_mode_touch": "tap",
         "margin": "default"
     },
     "placeholder": {
@@ -179,13 +180,23 @@
         },
         "flip_mode": {
             "label": "Flip Mode",
-            "description": "Choose the flip mode.",
+            "description": "Choose the flip mode for mouse and pen events.",
             "type": "select",
             "default": "hover",
             "options": {
                 "Hover": "hover",
                 "Click": "click",
                 "Hover and Click": "hover, click"
+            }
+        },
+        "flip_mode_touch": {
+            "label": "Flip Mode Touch",
+            "description": "Choose the flip mode for touch events.",
+            "type": "select",
+            "default": "tap",
+            "options": {
+                "Tap": "tap",
+                "Press": "press"
             }
         },
         "panel_style": {
@@ -295,7 +306,7 @@
         },
         "title_element": {
             "label": "HTML Element",
-            "description": "Choose one of the HTML elements to fit your semantic structure.",
+            "description": "Choose one of the HTML elements to fit the semantic structure.",
             "type": "select",
             "options": {
                 "h1": "h1",
@@ -445,7 +456,7 @@
         },
         "meta_element": {
             "label": "HTML Element",
-            "description": "Choose one of the HTML elements to fit your semantic structure.",
+            "description": "Choose one of the HTML elements to fit the semantic structure.",
             "type": "select",
             "options": {
                 "h1": "h1",
@@ -891,7 +902,7 @@
         },
         "title_back_element": {
             "label": "HTML Element",
-            "description": "Choose one of the HTML elements to fit your semantic structure.",
+            "description": "Choose one of the HTML elements to fit the semantic structure.",
             "type": "select",
             "options": {
                 "h1": "h1",
@@ -1041,7 +1052,7 @@
         },
         "meta_back_element": {
             "label": "HTML Element",
-            "description": "Choose one of the HTML elements to fit your semantic structure.",
+            "description": "Choose one of the HTML elements to fit the semantic structure.",
             "type": "select",
             "options": {
                 "h1": "h1",
@@ -1483,7 +1494,8 @@
                             "fields": [
                                 "flip_animation",
                                 "3d_effect",
-                                "flip_mode"
+                                "flip_mode",
+                                "flip_mode_touch"
                             ]
                         },
                         {
