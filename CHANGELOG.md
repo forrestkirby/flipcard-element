@@ -1,5 +1,21 @@
 # Flipcard Element Changelog
 
+## 2.6.8
+
+### Added
+
+- flip mode touch options
+
+### Fixed
+
+- center content vertically if image is left/right aligned
+
+## 2.5.10
+
+### Changed
+
+- improve flip handling on touch devices
+
 ## 2.4.15
 
 ### Added
@@ -20,7 +36,7 @@
 
 ### Added
 
-- flip mode option
+- flip mode options
 
 ## 2.4.1
 
