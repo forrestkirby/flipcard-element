@@ -276,7 +276,7 @@
         },
         "title_font_family": {
             "label": "Font Family",
-            "description": "Select an alternative font family.",
+            "description": "Select an alternative font family. Mind that not all styles have different font families.",
             "type": "select",
             "options": {
                 "None": "",
@@ -306,7 +306,7 @@
         },
         "title_element": {
             "label": "HTML Element",
-            "description": "Choose one of the HTML elements to fit your semantic structure.",
+            "description": "Choose one of the HTML elements to fit the semantic structure.",
             "type": "select",
             "options": {
                 "h1": "h1",
@@ -456,7 +456,7 @@
         },
         "meta_element": {
             "label": "HTML Element",
-            "description": "Choose one of the HTML elements to fit your semantic structure.",
+            "description": "Choose one of the HTML elements to fit the semantic structure.",
             "type": "select",
             "options": {
                 "h1": "h1",
@@ -581,7 +581,7 @@
         },
         "image_box_decoration": {
             "label": "Box Decoration",
-            "description": "Select the image's box decoration style. Note: The Mask option is not supported by all styles and may have no visible effect.",
+            "description": "Select the image box decoration style.",
             "type": "select",
             "options": {
                 "None": "",
@@ -872,7 +872,7 @@
         },
         "title_back_font_family": {
             "label": "Font Family",
-            "description": "Select an alternative font family.",
+            "description": "Select an alternative font family. Mind that not all styles have different font families.",
             "type": "select",
             "options": {
                 "None": "",
@@ -902,7 +902,7 @@
         },
         "title_back_element": {
             "label": "HTML Element",
-            "description": "Choose one of the HTML elements to fit your semantic structure.",
+            "description": "Choose one of the HTML elements to fit the semantic structure.",
             "type": "select",
             "options": {
                 "h1": "h1",
@@ -1052,7 +1052,7 @@
         },
         "meta_back_element": {
             "label": "HTML Element",
-            "description": "Choose one of the HTML elements to fit your semantic structure.",
+            "description": "Choose one of the HTML elements to fit the semantic structure.",
             "type": "select",
             "options": {
                 "h1": "h1",
@@ -1177,7 +1177,7 @@
         },
         "image_back_box_decoration": {
             "label": "Box Decoration",
-            "description": "Select the image's box decoration style. Note: The Mask option is not supported by all styles and may have no visible effect.",
+            "description": "Select the image box decoration style.",
             "type": "select",
             "options": {
                 "None": "",
