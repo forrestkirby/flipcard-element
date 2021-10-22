@@ -10,12 +10,6 @@
 
 - center content vertically if image is left/right aligned
 
-## 2.5.10
-
-### Changed
-
-- improve flip handling on touch devices
-
 ## 2.4.15
 
 ### Added
