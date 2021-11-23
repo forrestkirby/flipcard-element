@@ -1,5 +1,14 @@
 # Flipcard Element Changelog
 
+## 2.7.0
+
+### Added
+
+- tile style options
+- heading options to content style
+- text lead option to meta style
+- text lead and meta options to title style
+
 ## 2.6.8
 
 ### Added
