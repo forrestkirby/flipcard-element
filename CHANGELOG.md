@@ -1,5 +1,11 @@
 # Flipcard Element Changelog
 
+## 2.7.4
+
+### Fixed
+
+- tile style options
+
 ## 2.7.0
 
 ### Added
