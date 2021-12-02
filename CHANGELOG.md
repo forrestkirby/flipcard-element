@@ -1,5 +1,12 @@
 # Flipcard Element Changelog
 
+## 2.7.6
+
+### Fixed
+
+- panel padding update path
+- missing classes on cards
+
 ## 2.7.4
 
 ### Fixed
