@@ -1,5 +1,11 @@
 # Flipcard Element Changelog
 
+## 2.7.11
+
+### Fixed
+
+- notice about undefined index
+
 ## 2.7.9
 
 ### Added
