@@ -1,5 +1,11 @@
 # Flipcard Element Changelog
 
+## 2.7.22
+
+### Changed
+
+- card will not flip back when a link is clicked
+
 ## 2.7.17
 
 ### Removed
